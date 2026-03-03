@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin - Desa Oelomin</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS utama website -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background: linear-gradient(135deg, var(--primary-green), var(--accent-sky)); min-height:100vh; display:flex; align-items:center; justify-content:center;">
+
+    <div class="container" style="max-width:420px;">
+
+        <div style="background:white; padding:2.5rem; border-radius:16px; box-shadow:0 15px 40px rgba(0,0,0,0.15);">
+
+            <div style="text-align:center; margin-bottom:2rem;">
+                <div style="font-size:2.5rem;">🏡</div>
+                <h2 style="margin:10px 0 5px 0;">Admin Desa Oelomin</h2>
+                <p style="font-size:14px; color:#666;">Silakan login untuk mengakses dashboard *khusus perangkat desa*</p>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+                <label style="font-weight:600;">Username</label>
+                <input type="text" id="username" 
+                    style="width:100%; padding:12px; border-radius:8px; border:1px solid #ddd; margin-top:5px;">
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+                <label style="font-weight:600;">Password</label>
+                <input type="password" id="password" 
+                    style="width:100%; padding:12px; border-radius:8px; border:1px solid #ddd; margin-top:5px;">
+            </div>
+
+            <button onclick="login()" class="btn btn-primary" style="width:100%;">
+                Login
+            </button>
+
+        </div>
+
+        <p style="text-align:center; margin-top:1.5rem; color:white; font-size:14px;">
+            © 2026 Desa Oelomin
+        </p>
+
+    </div>
+
+    <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
+
+    const supabase = createClient(
+      'https://jvhxeijxcmogqvtvjfoj.supabase.co',
+      'sb_publishable_fg8x9X1V3Z1baHAGlQIFxA_USfTgJ2S'
+    );
+
+    async function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const { data } = await supabase
+            .from("admin")
+            .select("*")
+            .eq("username", username)
+            .eq("password", password);
+
+        if(data && data.length > 0){
+            localStorage.setItem("adminLogin", "true");
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Login gagal!");
+        }
+    }
+
+    window.login = login;
+    </script>
+
+</body>
+</html>

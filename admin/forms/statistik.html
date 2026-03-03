@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Desa Oelomin - Portal Resmi</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="../assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["../assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="../index.html" class="logo">
+              <img
+                src="../assets/img/kaiadmin/logo_light.svg"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="20"
+              />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a
+                  data-bs-toggle="collapse"
+                  href="#dashboard"
+                  class="collapsed"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="dashboard">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="profildesa.html">
+                        <span class="sub-item">Data Profil Desa</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="pemerintahan.html">
+                        <span class="sub-item">Data Struktur Pemerintahan</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="statistik.html">
+                        <span class="sub-item">Data Statistik Desa</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="galeri.html">
+                        <span class="sub-item">Data Galeri</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/admin/forms/potensi.html">
+                        <span class="sub-item">Data Potensi Desa</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="../dashboard.html" class="logo">
+                <img
+                  src="assets/img/kaiadmin/logo_light.svg"
+                  alt="navbar brand"
+                  class="navbar-brand"
+                  height="20"
+                />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
+              >
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="fa fa-search search-icon"></i>
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search ..."
+                    class="form-control"
+                  />
+                </div>
+              </nav>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="card">
+  <div class="card-header">
+    <h4>Kelola Statistik Penduduk</h4>
+  </div>
+
+  <div class="card-body">
+
+    <input type="hidden" id="edit_id_statistik">
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>Nama Dusun</label>
+        <input type="text" id="nama_dusun" class="form-control">
+      </div>
+
+      <div class="col-md-3">
+        <label>Jumlah KK</label>
+        <input type="number" id="jumlah_kk" class="form-control">
+      </div>
+
+      <div class="col-md-3">
+        <label>Laki-laki</label>
+        <input type="number" id="laki_laki" class="form-control">
+      </div>
+
+      <div class="col-md-3">
+        <label>Perempuan</label>
+        <input type="number" id="perempuan" class="form-control">
+      </div>
+    </div>
+
+    <button onclick="simpanStatistik()" class="btn btn-primary mt-3">
+      Simpan
+    </button>
+
+    <hr>
+
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Dusun</th>
+          <th>KK</th>
+          <th>Laki</th>
+          <th>Perempuan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tabelStatistik"></tbody>
+    </table>
+
+  </div>
+</div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    ThemeKita
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              2026, made with <i class="fa fa-heart heart text-danger"></i> by
+              <a href="#">KKN UNIVERSITAS CITRA BANGSA BISNIS DIGITAL </a>
+            </div>
+            <div>
+              Distributed by
+              <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Custom template | don't include it in your project! -->
+      <div class="custom-template">
+        <div class="title">Settings</div>
+        <div class="custom-content">
+          <div class="switcher">
+            <div class="switch-block">
+              <h4>Logo Header</h4>
+              <div class="btnSwitch">
+                <button
+                  type="button"
+                  class="selected changeLogoHeaderColor"
+                  data-color="dark"
+                ></button>
+                <button
+                  type="button"
+                  class="selected changeLogoHeaderColor"
+                  data-color="blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="purple"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="light-blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="green"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="orange"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="red"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="white"
+                ></button>
+                <br />
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="dark2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="purple2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="light-blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="green2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="orange2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeLogoHeaderColor"
+                  data-color="red2"
+                ></button>
+              </div>
+            </div>
+            <div class="switch-block">
+              <h4>Navbar Header</h4>
+              <div class="btnSwitch">
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="dark"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="purple"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="light-blue"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="green"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="orange"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="red"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="white"
+                ></button>
+                <br />
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="dark2"
+                ></button>
+                <button
+                  type="button"
+                  class="selected changeTopBarColor"
+                  data-color="blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="purple2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="light-blue2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="green2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="orange2"
+                ></button>
+                <button
+                  type="button"
+                  class="changeTopBarColor"
+                  data-color="red2"
+                ></button>
+              </div>
+            </div>
+            <div class="switch-block">
+              <h4>Sidebar</h4>
+              <div class="btnSwitch">
+                <button
+                  type="button"
+                  class="selected changeSideBarColor"
+                  data-color="white"
+                ></button>
+                <button
+                  type="button"
+                  class="changeSideBarColor"
+                  data-color="dark"
+                ></button>
+                <button
+                  type="button"
+                  class="changeSideBarColor"
+                  data-color="dark2"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="custom-toggle">
+          <i class="icon-settings"></i>
+        </div>
+      </div>
+      <!-- End Custom template -->
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Google Maps Plugin -->
+    <script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
+    <!-- SUPABASE CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    // INISIALISASI SUPABASE
+    const supabase = window.supabase.createClient(
+        "https://jvhxeijxcmogqvtvjfoj.supabase.co",
+        "sb_publishable_fg8x9X1V3Z1baHAGlQIFxA_USfTgJ2S"
+    );
+
+    loadStatistik();
+
+    async function loadStatistik(){
+
+        const { data, error } = await supabase
+            .from("statistik_penduduk")
+            .select("*");
+
+        if(error){
+            console.log("Error:", error);
+            return;
+        }
+
+        let html = "";
+
+        let totalKK = 0;
+        let totalLaki = 0;
+        let totalPerempuan = 0;
+
+        data.forEach(d=>{
+
+            html += `
+            <tr>
+              <td>${d.nama_dusun}</td>
+              <td>${d.jumlah_kk}</td>
+              <td>${d.laki_laki}</td>
+              <td>${d.perempuan}</td>
+              <td>
+                <button onclick="editStatistik('${d.id}')" class="btn btn-warning btn-sm">Edit</button>
+                <button onclick="hapusStatistik('${d.id}')" class="btn btn-danger btn-sm">Hapus</button>
+              </td>
+            </tr>
+            `;
+
+            totalKK += d.jumlah_kk;
+            totalLaki += d.laki_laki;
+            totalPerempuan += d.perempuan;
+        });
+
+        document.getElementById("tabelStatistik").innerHTML = html;
+
+        // Kalau kamu punya row total di dashboard
+        if(document.getElementById("totalKKDashboard")){
+            document.getElementById("totalKKDashboard").innerText = totalKK;
+            document.getElementById("totalLakiDashboard").innerText = totalLaki;
+            document.getElementById("totalPerempuanDashboard").innerText = totalPerempuan;
+            document.getElementById("totalJiwaDashboard").innerText = totalLaki + totalPerempuan;
+        }
+    }
+
+    window.simpanStatistik = async function(){
+
+        const id = document.getElementById("edit_id_statistik").value;
+
+        const dataInput = {
+            nama_dusun: document.getElementById("nama_dusun").value,
+            jumlah_kk: parseInt(document.getElementById("jumlah_kk").value),
+            laki_laki: parseInt(document.getElementById("laki_laki").value),
+            perempuan: parseInt(document.getElementById("perempuan").value)
+        };
+
+        if(id){
+            await supabase.from("statistik_penduduk")
+                .update(dataInput)
+                .eq("id", id);
+        } else {
+            await supabase.from("statistik_penduduk")
+                .insert([dataInput]);
+        }
+
+        resetFormStatistik();
+        loadStatistik();
+    }
+
+    window.editStatistik = async function(id){
+
+        const { data } = await supabase
+            .from("statistik_penduduk")
+            .select("*")
+            .eq("id", id)
+            .single();
+
+        document.getElementById("edit_id_statistik").value = data.id;
+        document.getElementById("nama_dusun").value = data.nama_dusun;
+        document.getElementById("jumlah_kk").value = data.jumlah_kk;
+        document.getElementById("laki_laki").value = data.laki_laki;
+        document.getElementById("perempuan").value = data.perempuan;
+    }
+
+    window.hapusStatistik = async function(id){
+
+        if(confirm("Yakin hapus data?")){
+            await supabase
+                .from("statistik_penduduk")
+                .delete()
+                .eq("id", id);
+
+            loadStatistik();
+        }
+    }
+
+    function resetFormStatistik(){
+        document.getElementById("edit_id_statistik").value = "";
+        document.getElementById("nama_dusun").value = "";
+        document.getElementById("jumlah_kk").value = "";
+        document.getElementById("laki_laki").value = "";
+        document.getElementById("perempuan").value = "";
+    }
+
+});
+</script>
+  </body>
+</html>
