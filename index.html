@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi Desa Oelomin - Informasi, layanan, berita, dan potensi desa">
+    <meta name="keywords" content="desa, pemerintahan desa, layanan desa, berita desa, UMKM desa">
+    <meta name="author" content="Desa Oelomin">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Desa Oelomin - Portal Resmi">
+    <meta property="og:description" content="Website resmi Desa Oelomin">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desaoelomin.id">
+    
+    <title>Desa Oelomin - Portal Resmi</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🏡</div>
+                <span>Desa Oelomin</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                <li><a href="profil.html" class="nav-link">Profil</a></li>
+                <li><a href="pemerintahan.html" class="nav-link">Pemerintahan</a></li>
+                <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+                <li><a href="perdes-inklusi.html" class="nav-link">Perdes Inklusi</a></li>
+                <li><a href="potensi.html" class="nav-link">Potensi</a></li>
+                <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+            </ul>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section class="hero" id="beranda">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Desa Oelomin</h1>
+            <p class="hero-subtitle">Membangun Masa Depan Bersama, Mewujudkan Desa yang Maju, Mandiri, dan Sejahtera</p>
+            <div class="hero-cta">
+                <a href="layanan.html" class="btn btn-primary">Layanan Desa</a>
+                <a href="profil.html" class="btn btn-secondary">Tentang Kami</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <polyline points="7 13 12 18 17 13"></polyline>
+                <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         STATISTICS SECTION
+    ======================================== -->
+    <div class="stats-section fade-in">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                <div class="stat-number" id="jumlahPenduduk"></div>
+                <div class="stat-label">Jumlah Penduduk</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏠</div>
+                <div class="stat-number" id="jumlahKK"></div>
+                <div class="stat-label">Kepala Keluarga</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏘️</div>
+                <div class="stat-number" id="jumlahDusun"></div>
+                <div class="stat-label">Dusun</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏘️</div>
+                <div class="stat-number" id="jumlahRW"></div>
+                <div class="stat-label">RW</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏘️</div>
+                <div class="stat-number" id="jumlahRT"></div>
+                <div class="stat-label">RT</div>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- ========================================
+        VISI MISI SECTION
+    ======================================== -->
+    <section class="section" id="visi-misi" style="background:#f9fafb;">
+        <div class="container">
+
+            <div class="section-header fade-in">
+                <div class="section-label">Visi & Misi</div>
+                <h2 class="section-title">Visi dan Misi Desa Oelomin</h2>
+                <p class="section-description">
+                    Komitmen dan arah pembangunan Desa Oelomin untuk masa depan yang lebih baik
+                </p>
+            </div>
+
+            <div class="visi-misi-grid">
+
+                <!-- VISI -->
+                <div class="visi-box fade-in">
+                    <h3>Visi</h3>
+                    <p>
+                        Membangun, menata, dan mengelola pemerintah sesa yang baik untuk 
+                        mewujudkan kehidupan masyarakat yang adil, makmur dan sejahtera.
+                    </p>
+                </div>
+
+                <!-- MISI -->
+                <div class="misi-box fade-in">
+                    <h3>Misi</h3>
+                    <ul>
+                        <li>Meningkatkan kualitas pelayanan terhadap masyarakat</li>
+                        <li>Menyelenggarakan urusan pemerintah dan secara terbuka dan bertanggungjawab</li>
+                        <li>Meningkatkan perekonomian masyarakat melalui penyuluhan-penyuluhan dan pelatihan-pelatihan </li>
+                        <li>Mewujudkan program-program yang belum terlaksana di desa </li>
+                        <li>Mewujudkan desa sehat terutama ibu dan anak serta lingkungan, dan meningkatkan kesejahteraan masyarakat untuk mencapai kehidupan yang lebih baik dan layak sehingga menjadi desa yang maju dan mandiri</li>
+                        <li>Memelihara nilai-nilai agama, sosial, dan budaya masyarakat, ketaatan terhadap nilai-nilai luhur agama kepatuhan pada norma sosial dan hukum akan mewujudkan masyarakat yang rukun tenteram lahir dan batin, selain itu memelihara nilai-nilai budaya akan memperkaya keragaman hidup masyarakat</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+   
+   
+    
+    <!-- ========================================
+         CONTACT SECTION
+    ======================================== -->
+    <section class="section" id="kontak" style="background: white;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Kontak</div>
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-description">Kami siap melayani dan menjawab pertanyaan Anda</p>
+            </div>
+            
+            <div class="profile-grid">
+                <div class="profile-content fade-in">
+                    <h3>Kantor Desa Oelomin</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span class="info-label">📍 Alamat</span>
+                            <span class="info-value">Jl. H. R. Koroh  No. 11, Kec. Nekasmese, Desa Oelomin, Kab. Kupang, Provinsi Nusa Tenggara Timur 65432</span>
+                        </li>
+                        <li>
+                            <span class="info-label">📧 Email</span>
+                            <span class="info-value">info@desaoelomin.id</span>
+                        </li>
+                        <li>
+                            <span class="info-label">⏰ Jam Kerja</span>
+                            <span class="info-value">Senin - Jumat: 08.00 - 15.00 WIB<br>Sabtu: 08.00 - 12.00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+                    <iframe class="profile-image fade-in map-container" style="background: linear-gradient(135deg, var(--primary-green), var(--accent-sky)); display: flex; align-items: center; justify-content: center; font-size: 5rem;" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15871.547578640948!2d123.63169785558432!3d-10.231818195032426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c56853f657b2b9f%3A0x823edff3999d57ef!2sOelomin%2C%20Kec.%20Nekamese%2C%20Kabupaten%20Kupang%2C%20Nusa%20Tenggara%20Tim.!5e1!3m2!1sid!2sid!4v1772418340684!5m2!1sid!2sid"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Desa Oelomin</h3>
+                    <p>Membangun masa depan bersama, mewujudkan desa yang maju, mandiri, dan sejahtera untuk generasi mendatang.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">→ Beranda</a></li>
+                        <li><a href="profil.html">→ Profil Desa</a></li>
+                        <li><a href="pemerintahan.html">→ Pemerintahan</a></li>
+                        <li><a href="layanan.html">→ Layanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="perdes-inklusi.html">Peraturan Desa Inklusi</a></li>
+                        <li><a href="potensi.html">→ Potensi Desa</a></li>
+                        <li><a href="galeri.html">→ Galeri</a></li>
+                        <li><a href="./admin/login.html">Logiin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>📍 Jl. H. R. Koroh No. 11</li>
+                        <li>📞 (0321) 123-4567</li>
+                        <li>📧 info@desaoelomin.id</li>
+                        <li>⏰ Sen-Jum: 08.00-15.00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 KKN UCB BISDIG Desa Oelomin. Dibuat dengan ❤️ untuk kemajuan desa</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Main JavaScript -->
+    <script src="assets/js/script.js"></script>
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
+
+const supabase = createClient(
+  'https://jvhxeijxcmogqvtvjfoj.supabase.co',
+  'sb_publishable_fg8x9X1V3Z1baHAGlQIFxA_USfTgJ2S'
+);
+
+async function loadProfilDesa() {
+  const { data, error } = await supabase
+    .from('profil_desa')
+    .select('*')
+    .limit(1);
+
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  if (!data || data.length === 0) return;
+
+  const profil = data[0];
+
+  document.getElementById("jumlahPenduduk").innerText = profil.jumlah_penduduk;
+  document.getElementById("jumlahKK").innerText = profil.jumlah_kk;
+  document.getElementById("jumlahDusun").innerText = profil.jumlah_dusun;
+  document.getElementById("jumlahRW").innerText = profil.jumlah_rw;
+  document.getElementById("jumlahRT").innerText = profil.jumlah_rt;
+}
+
+loadProfilDesa();
+</script>
+</body>
+</html>

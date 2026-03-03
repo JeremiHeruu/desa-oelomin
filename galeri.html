@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi Desa Oelomin - Informasi, layanan, berita, dan potensi desa">
+    <meta name="keywords" content="desa, pemerintahan desa, layanan desa, berita desa, UMKM desa">
+    <meta name="author" content="Desa Oelomin">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Desa Oelomin - Portal Resmi">
+    <meta property="og:description" content="Website resmi Desa Oelomin">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desaoelomin.id">
+    
+    <title>Desa Oelomin - Portal Resmi</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🏡</div>
+                <span>Desa Oelomin</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Beranda</a></li>
+                <li><a href="profil.html" class="nav-link">Profil</a></li>
+                <li><a href="pemerintahan.html" class="nav-link">Pemerintahan</a></li>
+                <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+                <li><a href="perdes-inklusi.html" class="nav-link">Perdes Inklusi</a></li>
+                <li><a href="potensi.html" class="nav-link">Potensi</a></li>
+                <li><a href="galeri.html" class="nav-link active">Galeri</a></li>
+                <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+            </ul>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========================================
+         GALLERY SECTION
+    ======================================== -->
+    <section class="section" id="galeri">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Galeri</div>
+                <h2 class="section-title">Galeri Kegiatan</h2>
+                <p class="section-description">Dokumentasi berbagai kegiatan dan momen di desa</p>
+            </div>
+            
+            <div class="gallery-grid" id="galeriContainer"">
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Desa Oelomin</h3>
+                    <p>Membangun masa depan bersama, mewujudkan desa yang maju, mandiri, dan sejahtera untuk generasi mendatang.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">→ Beranda</a></li>
+                        <li><a href="profil.html">→ Profil Desa</a></li>
+                        <li><a href="pemerintahan.html">→ Pemerintahan</a></li>
+                        <li><a href="layanan.html">→ Layanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="perdes-inklusi.html">Peraturan Desa Inklusi</a></li>
+                        <li><a href="potensi.html">→ Potensi Desa</a></li>
+                        <li><a href="galeri.html">→ Galeri</a></li>
+                        <li><a href="./admin/login.html">Logiin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>📍 Jl. H. R. Koroh No. 11</li>
+                        <li>📞 (0321) 123-4567</li>
+                        <li>📧 info@desaoelomin.id</li>
+                        <li>⏰ Sen-Jum: 08.00-15.00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 KKN UCB BISDIG Desa Oelomin. Dibuat dengan ❤️ untuk kemajuan desa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function(){
+
+    const supabase = window.supabase.createClient(
+        "https://jvhxeijxcmogqvtvjfoj.supabase.co",
+        "sb_publishable_fg8x9X1V3Z1baHAGlQIFxA_USfTgJ2S"
+    );
+
+    const { data, error } = await supabase
+        .from("galeri")
+        .select(`
+            id,
+            judul,
+            deskripsi,
+            galeri_images ( gambar_url )
+        `)
+        .order("created_at", { ascending: false });
+
+    if(error){
+        console.log(error);
+        return;
+    }
+
+    let html = "";
+
+    data.forEach(album => {
+
+        // ambil gambar pertama sebagai cover
+        let cover = album.galeri_images.length > 0
+            ? album.galeri_images[0].gambar_url
+            : "assets/images/placeholder.jpg";
+
+        html += `
+        <a href="galeri-detail.html?id=${album.id}" class="gallery-item">
+            <img src="${cover}" alt="${album.judul}">
+            <div class="gallery-caption">
+                <h4>${album.judul}</h4>
+                <p>${album.deskripsi || ""}</p>
+            </div>
+        </a>
+        `;
+    });
+
+    document.getElementById("galeriContainer").innerHTML = html;
+
+});
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi Desa Oelomin - Informasi, layanan, berita, dan potensi desa">
+    <meta name="keywords" content="desa, pemerintahan desa, layanan desa, berita desa, UMKM desa">
+    <meta name="author" content="Desa Oelomin">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Desa Oelomin - Portal Resmi">
+    <meta property="og:description" content="Website resmi Desa Oelomin">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desaoelomin.id">
+    
+    <title>Desa Oelomin - Portal Resmi</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🏡</div>
+                <span>Desa Oelomin</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                <li><a href="profil.html" class="nav-link">Profil</a></li>
+                <li><a href="pemerintahan.html" class="nav-link">Pemerintahan</a></li>
+                <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+                <li><a href="perdes-inklusi.html" class="nav-link">Perdes Inklusi</a></li>
+                <li><a href="potensi.html" class="nav-link">Potensi</a></li>
+                <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+            </ul>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <!-- SECTION DETAIL BERITA -->
+    <section class="container" style="padding: 40px 0;">
+        
+        <div class="detail-card" style="max-width: 800px; margin: auto;">
+            <br>
+            <br>
+            <div class="section-header fade-in">
+                <div class="section-label">DETAIL DESA</div>
+                <h2 class="section-title">Detail Informasi Desa</h2>
+            </div>
+            <!-- Gambar -->
+            <div id="detailContent"></div>
+
+        </div>
+
+    </section>
+    
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Desa Oelomin</h3>
+                    <p>Membangun masa depan bersama, mewujudkan desa yang maju, mandiri, dan sejahtera untuk generasi mendatang.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#beranda">→ Beranda</a></li>
+                        <li><a href="#profil">→ Profil Desa</a></li>
+                        <li><a href="#pemerintahan">→ Pemerintahan</a></li>
+                        <li><a href="#layanan">→ Layanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#berita">→ Berita & Pengumuman</a></li>
+                        <li><a href="#potensi">→ Potensi Desa</a></li>
+                        <li><a href="#galeri">→ Galeri</a></li>
+                        <li><a href="#kontak">→ Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>📍 Jl. Raya Desa No. 123</li>
+                        <li>📞 (0321) 123-4567</li>
+                        <li>📧 info@desaoelomin.id</li>
+                        <li>⏰ Sen-Jum: 08.00-15.00</li>
+                    </ul>
+                </div>
+            </div>
+    
+    <!-- Main JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+if (!window.sbClient) {
+    window.sbClient = window.supabase.createClient(
+        "https://jvhxeijxcmogqvtvjfoj.supabase.co",
+        "sb_publishable_fg8x9X1V3Z1baHAGlQIFxA_USfTgJ2S"
+    );
+}
+
+document.addEventListener("DOMContentLoaded", loadDetail);
+
+async function loadDetail(){
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    if(!id){
+        document.getElementById("detailContent").innerHTML = "<p>Data tidak ditemukan.</p>";
+        return;
+    }
+
+    const { data, error } = await window.sbClient
+        .from("potensi")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+    if(error || !data){
+        document.getElementById("detailContent").innerHTML = "<p>Data tidak ditemukan.</p>";
+        return;
+    }
+
+    document.getElementById("detailContent").innerHTML = `
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="${data.gambar_url}" 
+                 style="width:100%; max-height:400px; object-fit:cover; border-radius:8px;">
+        </div>
+
+        <div style="line-height:1.8; text-align:justify;">
+            <h3 style="margin-bottom:15px;">${data.judul}</h3>
+            <p>${data.deskripsi}</p>
+        </div>
+    `;
+}
+</script>
+    
+</body>
+</html>

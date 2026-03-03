@@ -1,0 +1,98 @@
+<!-- 
+========================================
+TEMPLATE MENAMBAHKAN BERITA
+========================================
+
+Copy kode di bawah ini dan paste di section BERITA
+di file index.html (sekitar baris 330)
+
+Ganti:
+- Tanggal
+- Kategori
+- Judul
+- Isi/Excerpt
+- Link (opsional)
+
+========================================
+-->
+
+<article class="news-card fade-in">
+    <div class="news-image">
+        <span class="news-date">15 Jan 2026</span>
+        <!-- Tambahkan gambar: -->
+        <!-- <div class="news-image" style="background-image: url('assets/images/news/berita-1.jpg');"> -->
+    </div>
+    <div class="news-content">
+        <div class="news-category">Pembangunan</div>
+        <!-- Kategori yang bisa digunakan:
+             - Pembangunan
+             - Kesehatan
+             - Ekonomi
+             - Pendidikan
+             - Sosial
+             - Budaya
+             - Pemerintahan
+        -->
+        
+        <h3 class="news-title">Judul Berita Anda</h3>
+        
+        <p class="news-excerpt">
+            Ringkasan berita maksimal 2-3 kalimat. 
+            Jelaskan poin utama berita dengan singkat dan jelas.
+        </p>
+        
+        <a href="#" class="card-link">Baca Selengkapnya →</a>
+        <!-- Ganti # dengan link ke halaman detail berita -->
+    </div>
+</article>
+
+<!-- 
+========================================
+CONTOH BERITA LENGKAP DENGAN GAMBAR
+========================================
+-->
+
+<article class="news-card fade-in">
+    <div class="news-image" style="background-image: url('assets/images/news/gotong-royong.jpg');">
+        <span class="news-date">20 Feb 2026</span>
+    </div>
+    <div class="news-content">
+        <div class="news-category">Sosial</div>
+        <h3 class="news-title">Gotong Royong Bersihkan Sungai Desa</h3>
+        <p class="news-excerpt">
+            Warga desa berkumpul untuk membersihkan sungai yang melintasi desa 
+            dalam rangka menjaga kelestarian lingkungan dan mencegah banjir.
+        </p>
+        <a href="berita/gotong-royong-2026.html" class="card-link">Baca Selengkapnya →</a>
+    </div>
+</article>
+
+<!-- 
+========================================
+TIPS:
+========================================
+
+1. Letakkan berita terbaru di ATAS
+2. Maksimal 6-9 berita di halaman utama
+3. Berita lama bisa di-archive
+4. Gunakan gambar 800x600px, max 100KB
+5. Compress gambar di https://tinypng.com
+6. Tulis ringkasan yang menarik (excerpt)
+7. Gunakan kategori yang konsisten
+
+========================================
+KATEGORI WARNA (otomatis dari CSS):
+========================================
+
+Pembangunan = Hijau tua
+Kesehatan   = Biru
+Ekonomi     = Emas/Kuning
+Pendidikan  = Ungu
+Sosial      = Hijau muda
+Budaya      = Oranye
+Pemerintahan = Merah
+
+Warna akan muncul otomatis berdasarkan nama kategori.
+
+========================================
+-->

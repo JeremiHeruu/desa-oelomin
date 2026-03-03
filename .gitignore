@@ -1,0 +1,54 @@
+# Git Ignore untuk Website Desa
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Dependencies (jika menggunakan Node.js)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build Files (jika ada build process)
+dist/
+build/
+*.min.css
+*.min.js
+*.map
+
+# Images (uncomment jika tidak ingin commit gambar)
+# assets/images/*.jpg
+# assets/images/*.png
+# assets/images/*.gif
+
+# Config Files (jangan commit file config dengan password)
+config.php
+.env
+database.config
+
+# Backup Files
+backup/
+*.zip
+*.rar
+*.tar.gz

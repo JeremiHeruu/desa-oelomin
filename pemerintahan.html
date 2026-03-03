@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Pemerintahan - Desa Oelomin</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🏡</div>
+            <span>Desa Oelomin</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Beranda</a></li>
+            <li><a href="profil.html" class="nav-link">Profil</a></li>
+            <li><a href="pemerintahan.html" class="nav-link active">Pemerintahan</a></li>
+            <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+            <li><a href="perdes-inklusi.html" class="nav-link">Perdes Inklusi</a></li>
+            <li><a href="potensi.html" class="nav-link">Potensi</a></li>
+            <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+            <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+        </ul>
+
+        <div class="mobile-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<section class="section" id="pemerintahan">
+    <div class="container">
+
+        <div class="section-header fade-in">
+            <div class="section-label">Pemerintahan</div>
+            <h2 class="section-title">Struktur Pemerintahan Desa</h2>
+            <p class="section-description">
+                Tim pemerintahan desa yang siap melayani masyarakat dengan sepenuh hati
+            </p>
+        </div>
+
+        <div class="government-grid" id="strukturContainer">
+            <!-- DATA DINAMIS MASUK DI SINI -->
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Desa Oelomin</h3>
+                    <p>Membangun masa depan bersama, mewujudkan desa yang maju, mandiri, dan sejahtera untuk generasi mendatang.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">→ Beranda</a></li>
+                        <li><a href="profil.html">→ Profil Desa</a></li>
+                        <li><a href="pemerintahan.html">→ Pemerintahan</a></li>
+                        <li><a href="layanan.html">→ Layanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="perdes-inklusi.html">Peraturan Desa Inklusi</a></li>
+                        <li><a href="potensi.html">→ Potensi Desa</a></li>
+                        <li><a href="galeri.html">→ Galeri</a></li>
+                        <li><a href="./admin/login.html">Logiin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>📍 Jl. H. R. Koroh No. 11</li>
+                        <li>📞 (0321) 123-4567</li>
+                        <li>📧 info@desaoelomin.id</li>
+                        <li>⏰ Sen-Jum: 08.00-15.00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 KKN UCB BISDIG Desa Oelomin. Dibuat dengan ❤️ untuk kemajuan desa</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="assets/js/script.js"></script>
+
+<!-- SUPABASE CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function(){
+
+    // INISIALISASI SUPABASE DI HALAMAN INI
+    const supabase = window.supabase.createClient(
+        "https://jvhxeijxcmogqvtvjfoj.supabase.co",
+        "sb_publishable_fg8x9X1V3Z1baHAGlQIFxA_USfTgJ2S"
+    );
+
+    const container = document.getElementById("strukturContainer");
+
+    const { data, error } = await supabase
+        .from("struktur_pemerintahan")
+        .select("*")
+        .order("urutan", { ascending: true });
+
+    if(error){
+        console.log(error);
+        container.innerHTML = "<p>Error mengambil data</p>";
+        return;
+    }
+
+    if(!data || data.length === 0){
+        container.innerHTML = "<p>Belum ada data struktur pemerintahan.</p>";
+        return;
+    }
+
+    let html = "";
+
+    data.forEach(d => {
+        html += `
+            <div class="official-card">
+                <div class="official-avatar"
+                     style="background-image:url('${d.foto_url}');
+                            background-size:cover;
+                            background-position:center;
+                            ">
+                </div>
+                <div class="official-name">${d.nama}</div>
+                <div class="official-position">${d.jabatan}</div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+
+});
+</script>
+
+</body>
+</html>

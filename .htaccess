@@ -1,0 +1,247 @@
+# ========================================
+# HTACCESS CONFIGURATION
+# Website Desa Harapan Jaya
+# ========================================
+
+# Disable directory browsing
+Options -Indexes
+
+# ========================================
+# SECURITY
+# ========================================
+
+# Protect sensitive files
+<FilesMatch "^(\.htaccess|\.htpasswd|config\.php|\.git)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to admin panel from unauthorized IPs (optional)
+# Uncomment and add your IP
+# <Files "admin-panel.html">
+#     Order Deny,Allow
+#     Deny from all
+#     Allow from 192.168.1.100
+# </Files>
+
+# Block bad bots and scanners
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^.*(bot|crawl|slurp|spider|curl|wget).*$ [NC]
+RewriteCond %{HTTP_USER_AGENT} !Googlebot [NC]
+RewriteCond %{HTTP_USER_AGENT} !bingbot [NC]
+RewriteRule ^.*$ - [F,L]
+
+# Protect against XSS
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ========================================
+# PERFORMANCE - GZIP COMPRESSION
+# ========================================
+
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE font/truetype
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE image/svg+xml
+    
+    # Remove browser bugs
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    
+    Header append Vary User-Agent
+</IfModule>
+
+# ========================================
+# BROWSER CACHING
+# ========================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Video
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    
+    # Others
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+    # Cache static resources
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|ttf|otf|pdf)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # Don't cache HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# URL REWRITE
+# ========================================
+
+RewriteEngine On
+
+# Force HTTPS (uncomment when SSL is installed)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force www (or non-www, choose one)
+# Force www
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Force non-www
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Remove .html extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Redirect old URLs (examples)
+# Redirect 301 /old-page.html /new-page
+# Redirect 301 /old-folder/ /new-folder/
+
+# ========================================
+# ERROR PAGES
+# ========================================
+
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# ========================================
+# FILE UPLOAD LIMITS (if needed)
+# ========================================
+
+# php_value upload_max_filesize 50M
+# php_value post_max_size 50M
+# php_value max_execution_time 300
+# php_value max_input_time 300
+
+# ========================================
+# CORS (Cross-Origin Resource Sharing)
+# Enable if you need API access from other domains
+# ========================================
+
+# <IfModule mod_headers.c>
+#     Header set Access-Control-Allow-Origin "*"
+#     Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+#     Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+# </IfModule>
+
+# ========================================
+# PREVENT HOTLINKING
+# Protect your images from being used on other sites
+# ========================================
+
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [NC,F,L]
+
+# ========================================
+# CHARSET
+# ========================================
+
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+
+# ========================================
+# MIME TYPES
+# ========================================
+
+<IfModule mod_mime.c>
+    # Web fonts
+    AddType font/ttf .ttf
+    AddType font/otf .otf
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType application/vnd.ms-fontobject .eot
+    
+    # Images
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+    
+    # Others
+    AddType application/json .json
+    AddType application/ld+json .jsonld
+</IfModule>
+
+# ========================================
+# BLOCK ACCESS TO SENSITIVE FILES
+# ========================================
+
+<FilesMatch "(?i)(\.bak|\.config|\.sql|\.fla|\.psd|\.ini|\.log|\.sh|\.inc|\.swp|\.dist)$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+# ========================================
+# ADDITIONAL NOTES
+# ========================================
+
+# To enable this configuration:
+# 1. Upload this file as .htaccess to your root directory
+# 2. Make sure mod_rewrite, mod_deflate, mod_expires, and mod_headers are enabled
+# 3. Adjust the configurations based on your needs
+# 4. Test your website after uploading
+
+# Performance Test Tools:
+# - Google PageSpeed: https://pagespeed.web.dev
+# - GTmetrix: https://gtmetrix.com
+# - Pingdom: https://tools.pingdom.com
+
+# Security Test Tools:
+# - Mozilla Observatory: https://observatory.mozilla.org
+# - SecurityHeaders: https://securityheaders.com

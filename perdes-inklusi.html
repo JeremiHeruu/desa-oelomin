@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi Desa Oelomin - Informasi, layanan, berita, dan potensi desa">
+    <meta name="keywords" content="desa, pemerintahan desa, layanan desa, berita desa, UMKM desa">
+    <meta name="author" content="Desa Oelomin">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Desa Oelomin - Portal Resmi">
+    <meta property="og:description" content="Website resmi Desa Oelomin">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desaoelomin.id">
+    
+    <title>Desa Oelomin - Portal Resmi</title>
+    <meta name="description" content="Website resmi Desa Oelomin berisi informasi, potensi desa, galeri dan layanan masyarakat.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🏡</div>
+                <span>Desa Oelomin</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                <li><a href="profil.html" class="nav-link">Profil</a></li>
+                <li><a href="pemerintahan.html" class="nav-link">Pemerintahan</a></li>
+                <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+                <li><a href="perdes-inklusi.html" class="nav-link">Perdes Inklusi</a></li>
+                <li><a href="potensi.html" class="nav-link">Potensi</a></li>
+                <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+            </ul>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="section">
+        <div class="container">
+        <div class="section-header">
+
+            <div class="section-label">Dokumen</div>
+            <h2 class="section-title">Peraturan Desa Inklusi</h2>
+            <p class="section-description">
+                Dokumentasi Perdes Inklusi Desa Oelomin dalam bentuk visual.
+            </p>
+        </div>
+
+        <div style="text-align:center; margin-bottom:2rem;">
+            <a href="https://drive.google.com/uc?export=download&id=1OveD79YPhnGn9WFKEnTtkaXGnCYBffff"
+            target="_blank"
+            class="btn btn-primary"
+            style="padding:12px 25px; font-size:16px;">
+            📄 Download PDF Perdes Inklusi
+            </a>
+        </div>
+
+        <!-- SLIDER -->
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+
+                <div class="slide">
+                    <a target="_blank" href="assets/images/perdes1.jpeg">
+                        <img src="assets/images/perdes1.jpeg" alt="Perdes 1">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a target="_blank" href="assets/images/perdes2.jpeg">
+                        <img src="assets/images/perdes2.jpeg" alt="Perdes 2">
+                    </a>
+                </div>
+
+                 <div class="slide">
+                    <a target="_blank" href="assets/images/perdes3jpeg">
+                        <img src="assets/images/perdes3.jpeg" alt="Perdes 2">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a target="_blank" href="assets/images/perdes4.jpeg">
+                        <img src="assets/images/perdes4.jpeg" alt="Perdes 2">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a target="_blank" href="assets/images/perdes5.jpeg">
+                        <img src="assets/images/perdes5.jpeg" alt="Perdes 2">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a target="_blank" href="assets/images/perdes5.jpeg">
+                        <img src="assets/images/perdes5.jpeg" alt="Perdes 2">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+            <button class="btn btn-primary" onclick="nextSlide()">Berikutnya →</button>
+            <br>
+            <br>
+            <button class="btn btn-primary" onclick="prevSlide()">← Sebelumnya</button>
+        </div>
+
+        </div>
+    </section>
+
+    
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Desa Oelomin</h3>
+                    <p>Membangun masa depan bersama, mewujudkan desa yang maju, mandiri, dan sejahtera untuk generasi mendatang.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">→ Beranda</a></li>
+                        <li><a href="profil.html">→ Profil Desa</a></li>
+                        <li><a href="pemerintahan.html">→ Pemerintahan</a></li>
+                        <li><a href="layanan.html">→ Layanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="perdes-inklusi.html">Peraturan Desa Inklusi</a></li>
+                        <li><a href="potensi.html">→ Potensi Desa</a></li>
+                        <li><a href="galeri.html">→ Galeri</a></li>
+                        <li><a href="./admin/login.html">Logiin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>📍 Jl. H. R. Koroh No. 11</li>
+                        <li>📞 (0321) 123-4567</li>
+                        <li>📧 info@desaoelomin.id</li>
+                        <li>⏰ Sen-Jum: 08.00-15.00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 KKN UCB BISDIG Desa Oelomin. Dibuat dengan ❤️ untuk kemajuan desa</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Main JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <!-- STYLE KHUSUS SLIDER -->
+<style>
+.slider-container {
+    overflow: hidden;
+    max-width: 450px;
+    margin: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.slide img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+@media (max-width:768px){
+    .slide img{
+        height: 500px;
+    }
+}
+</style>
+
+<!-- SCRIPT SLIDER -->
+<script>
+let currentIndex = 0;
+const track = document.getElementById("sliderTrack");
+const slides = document.querySelectorAll(".slide");
+
+function updateSlide(){
+    track.style.transform = "translateX(-" + (currentIndex * 100) + "%)";
+}
+
+function nextSlide(){
+    if(currentIndex < slides.length - 1){
+        currentIndex++;
+        updateSlide();
+    }
+}
+
+function prevSlide(){
+    if(currentIndex > 0){
+        currentIndex--;
+        updateSlide();
+    }
+}
+
+/* Swipe Support (HP) */
+let startX = 0;
+
+track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if(startX - endX > 50){
+        nextSlide();
+    } else if(endX - startX > 50){
+        prevSlide();
+    }
+});
+</script>
+
+    
+</body>
+</html>
